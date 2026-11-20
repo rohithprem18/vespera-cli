@@ -9,6 +9,8 @@
 [![Tests: pytest](https://img.shields.io/badge/tests-pytest-4fd1c5.svg)](tests/)
 ![Platforms](https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20macOS-555.svg)
 
+<img src="docs/assets/demo.gif" alt="Animated 3D demo of a Vespera terminal session" width="840">
+
 </div>
 
 Vespera is a persistent terminal agent, not a stateless chatbot. It runs real
@@ -39,6 +41,12 @@ OpenAI, or a local `llama.cpp` / Ollama server.
   the context window.
 - **Cross-platform.** All paths use `pathlib`, so the same code runs on Linux,
   macOS, and Windows.
+
+## Screenshot
+
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="Vespera terminal session: banner, tool calls, reflection, /memory and /skills" width="720">
+</p>
 
 ## Installation
 
@@ -212,6 +220,13 @@ The suite covers memory caps and snapshot freezing, FTS5 search, skill parsing
 and writing, guardrail patterns, truncation, the multi-step loop, streaming
 tool-call deltas, reflection, and session resume. A fake client stands in for
 the model API, so no network access is needed.
+
+To regenerate the README visuals:
+
+```bash
+pip install pillow numpy
+python scripts/render_demo.py
+```
 
 ## License
 

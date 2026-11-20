@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vespera-cli"
+version = "0.1.0"
+description = "A command-line-first autonomous agent with bounded memory, FTS5 session recall, and self-authored skills."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Rohith Prem Sivaraman" }]
+keywords = ["agent", "cli", "llm", "tool-calling", "openai-compatible"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "openai>=1.30",
+    "rich>=13.7",
+    "prompt_toolkit>=3.0.40",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/rohithprem18/vespera-cli"
+
+[project.scripts]
+vespera = "vespera.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
